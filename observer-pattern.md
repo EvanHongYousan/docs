@@ -123,3 +123,65 @@ Subject.prototype.Notify = function (context) {
     }
 };
 ```
+>注意这里Subject类的Notify方法。在观察者模式中，观察者可以观察到被观察者，原因就是：被观察者把观察者的引用存储起来，被观察者可以进行"通告"，对所有观察者进行调用(发送信息)。
+
+下面是一个具体的实例
+
+```javascript
+<html>
+
+<head></head>
+
+<body>
+    <button id="addNewObserver">Add New Observer checkbox</button>
+    <input id="mainCheckbox" type="checkbox" />
+    <div id="observersContainer"></div>
+    <script src="./observer-pattern.js"></script>
+    <script>
+        // 我们DOM 元素的引用
+
+        var controlCheckbox = document.getElementById("mainCheckbox"),
+            addBtn = document.getElementById("addNewObserver"),
+            container = document.getElementById("observersContainer");
+
+
+        // 具体的被观察者
+
+        //Subject 类扩展controlCheckbox 类
+        extend(new Subject(), controlCheckbox);
+
+        //点击checkbox 将会触发对观察者的通知
+        controlCheckbox["onclick"] = new Function("controlCheckbox.Notify(controlCheckbox.checked)");
+
+
+        addBtn["onclick"] = AddNewObserver;
+
+        // 具体的观察者
+
+        function AddNewObserver() {
+
+            //建立一个新的用于增加的checkbox
+            var check = document.createElement("input");
+            check.type = "checkbox";
+
+            // 使用Observer 类扩展checkbox
+            extend(new Observer(), check);
+
+            // 使用定制的Update函数重载
+            check.Update = function (value) {
+                this.checked = value;
+            };
+
+            // 增加新的观察者到我们主要的被观察者的观察者列表中
+            controlCheckbox.AddObserver(check);
+
+            // 将元素添加到容器的最后
+            container.appendChild(check);
+        }
+    </script>
+</body>
+
+</html>
+```
+
+至此，观察者模式使用方式简述完毕。
