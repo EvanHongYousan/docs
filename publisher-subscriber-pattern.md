@@ -70,21 +70,27 @@ Publisher.prototype.unsubscribe = function (token) {
     return this;
 };
 
-var Subscriber = function () { }
+var Subscriber = function (name) {
+    this.name = name;
+}
 
 Subscriber.prototype.log = function (topic, message) {
-    console.log('receive from ' + topic + ', the message is: ' + message);
+    console.log('I am ' + this.name + ', I receive message from ' + topic + ', the message is: ' + message);
 }
 
 var publisher = new Publisher();
 
-var subscriber1 = new Subscriber();
-var subscriber2 = new Subscriber();
-var subscriber3 = new Subscriber();
+var subscriber1 = new Subscriber('subscriber1');
+var subscriber2 = new Subscriber('subscriber2');
+var subscriber3 = new Subscriber('subscriber3');
+var subscriber4 = new Subscriber('subscriber4');
+var subscriber5 = new Subscriber('subscriber5');
 
-publisher.subscribe('channer1', subscriber1.log);
-publisher.subscribe('channer2', subscriber2.log);
-publisher.subscribe('channer3', subscriber3.log);
+publisher.subscribe('channer1', subscriber1.log.bind(subscriber1));
+publisher.subscribe('channer2', subscriber2.log.bind(subscriber2));
+publisher.subscribe('channer3', subscriber3.log.bind(subscriber3));
+publisher.subscribe('channer1', subscriber4.log.bind(subscriber4));
+publisher.subscribe('channer1', subscriber5.log.bind(subscriber5));
 
 publisher.publish('channer1', 'channer1 is big');
 publisher.publish('channer2', 'channer2 is not big');
