@@ -18,9 +18,9 @@
 
 ## 观察者模式实现原理
 
-我们可以通过一个实例来了解观察者模式的运行原理。
+可以通过一个实例来了解观察者模式的运行原理。
 
-首先，我们建立一个描述观察者的类。
+首先，建立一个描述观察者的类。
 
 ```javascript
 function Observer() {
@@ -30,7 +30,7 @@ function Observer() {
 }
 ```
 
-然后，我们建立一个描述观察者队列的类。
+然后，建立一个描述观察者队列的类。
 
 ```javascript
 function ObserverList() {
@@ -101,7 +101,7 @@ function extend(extension, obj) {
 }
 ```
 
-接着，我们建立一个描述被观察者的类。
+接着，建立一个描述被观察者的类。
 
 ```javascript
 function Subject() {
