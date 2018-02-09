@@ -98,3 +98,10 @@ publisher.publish('channer3', 'channer3 is small');
 ```
 
 发布/订阅模式使用方式简述完毕。
+
+## 参考
+
+[《JavaScript设计模式与开发实践》](https://book.douban.com/subject/26382780/)
+
+[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+[Learning JavaScript Design Patterns 中文版](http://www.oschina.net/translate/learning-javascript-design-patterns#introduction)
