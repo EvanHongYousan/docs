@@ -1,4 +1,4 @@
-# 数据绑定原理收集
+# 数据绑定方案收集
 
 ## 封装属性访问器 
 
@@ -83,3 +83,45 @@ document.addEventListener('keyup',function(e){
     </body>
 </html>
 ```
+
+## ECMA2015的新特性Proxy
+
+```javascript
+let validator = {
+  set: function(obj, prop, value) {
+    if (prop === 'age') {
+      if (!Number.isInteger(value)) {
+        throw new TypeError('The age is not an integer');
+      }
+      if (value > 200) {
+        throw new RangeError('The age seems invalid');
+      }
+    }
+
+    // The default behavior to store the value
+    obj[prop] = value;
+
+    // Indicate success
+    return true;
+  }
+};
+
+let person = new Proxy({}, validator);
+
+person.age = 100;
+console.log(person.age); // 100
+person.age = 'young'; // Throws an exception
+person.age = 300; // Throws an exception
+```
+
+## 几个被废弃的方案
+
+### 1
+Object.observe(obj, callback[, acceptList]) 方法对对象（或者其属性）进行监控观察，一旦其发生变化时，将会执行相应的handler。
+
+现在 Object.observe 将不加入es7 [An update on Object.observe](https://mail.mozilla.org/pipermail/es-discuss/2015-November/044684.html)
+
+### 2
+Object.prototype.watch(prop, handler) 方法对对象属性进行监控观察，一旦其发生变化时，将会执行相应的handler。
+
+此方法只在Firefox 58之前的Firefox中实现，其余浏览器及浏览器版本均不实现此方法 [Object.prototype.watch()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch)
