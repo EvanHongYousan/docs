@@ -20,6 +20,40 @@ document.addEventListener('keyup',function(e){
 });
 ```
 
+>对象里目前存在的属性描述符有两种主要形式：数据描述符和存取描述符。数据描述符是一个具有值的属性，该值可能是可写的，也可能不是可写的。存取描述符是由getter-setter函数对描述的属性。描述符必须是这两种形式之一；不能同时是两者。
+
+### 数据描述符和存取描述符均具有以下可选键值：
+
+- configurable
+
+当且仅当该属性的 configurable 为 true 时，该属性描述符才能够被改变，同时该属性也能从对应的对象上被删除。默认为 false。
+
+- enumerable
+
+当且仅当该属性的enumerable为true时，该属性才能够出现在对象的枚举属性中。默认为 false。
+
+### 数据描述符同时具有以下可选键值：
+
+- value
+
+该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。默认为 undefined。
+
+- writable
+
+当且仅当该属性的writable为true时，value才能被赋值运算符改变。默认为 false。
+
+### 存取描述符同时具有以下可选键值：
+
+- get
+
+一个给属性提供 getter 的方法，如果没有 getter 则为 undefined。该方法返回值被用作属性值。默认为 undefined。
+
+- set
+
+一个给属性提供 setter 的方法，如果没有 setter 则为 undefined。该方法将接受唯一参数，并将该参数的新值分配给该属性。默认为 undefined。
+
+>如果一个描述符不具有value,writable,get 和 set 任意一个关键字，那么它将被认为是一个数据描述符。如果一个描述符同时有(value或writable)和(get或set)关键字，将会产生一个异常。
+
 ## angular 1.x 的数据绑定原理
 
 在未引入angluar1.x的情况下，要实现angular1.x的数据绑定设计，大概会是下面这样：
