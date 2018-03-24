@@ -32,3 +32,47 @@ var logPick = (function () {
     };
 })();
 ```
+
+## 装饰者模式介绍
+
+装饰模式是在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。它是通过创建一个包装对象，也就是装饰来包裹真实的对象。
+
+## 装饰者模式使用场景
+
+### 数据统计上报
+
+```javascript
+Function.prototype.after = function (afterfn) {
+    var _self = this;
+    return function(){
+        var ret = _self.apply(this, arguments);;
+        afterfn.apply(this, arguments);
+        return ret;
+    };
+};
+var func = function (param) {
+    console.log(param);
+}
+func = func.after(function (param) {
+    console.log('report: ' + JSON.stringify(param));
+});
+```
+
+### 改变参数
+
+```javascript
+Function.prototype.before = function (beforefn) {
+    var _self = this;
+    return function () {
+        beforefn.apply(this, arguments);
+        return _self.apply(this, arguments);
+    };
+};
+var func = function (param) {
+    console.log(param);
+}
+func = func.before(function (param) {
+    param.kk = 'kk';
+    console.log('decorator params');
+});
+```
