@@ -138,3 +138,78 @@
 
 对于链接，也是相同的情况。视觉上删除周围的框，链接的内容仍然保留。 由于attribute通常不受此CSS规则的影响，因此该链接仍然可以正常运行，并可用于正常导航。
 
+## display: contents; 有何用处？
+
+在过去，我们不得不以一种既语义化，又可让CSS进行样式设计的方式来布局HTML。这导致我们要么包装了太多的元素，要么元素太少以至于需要启用兄弟选择器。那些需要使用兄弟选择器的情况，是引入CSS Grid Layout的重要原因。（这段好像翻译的有点问题）
+
+举个例子，我们来看这个布局 -
+
+![](./imgs/20180401/Screen-Shot-2018-03-27-at-10.27.27-am.png)
+
+我们有两张彼此相邻的“卡片”，每张都有一个标题，一个段落和一个页脚。我们想要的是每张卡内的每个部分都是相同的高度，而不管每个部分的内容如何（例如，第一张卡片只有1行，而第三张卡片有3行标题，但是第一张卡片的标题部分高度应该与第三个相匹配）。
+
+我们可以使用CSS Grid来实现这种布局，但是我们需要每个“卡片”中的所有元素成为彼此的兄弟元素。 所以，我们可能需要像这样布局我们的HTML -
+
+```html
+<div class="grid">
+  <h2>This is a heading</h2>
+  <p>...</p>
+  <p>Footer stuff</p>
+    
+  <h2>This is a really really really super duper loooong heading</h2>
+  <p>...</p>
+  <p>Footer stuff</p>
+</div>
+```
+
+我们可以应用以下样式 -
+
+```css
+.grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+```
+
+虽然这不是一个错误的构建文档方式，但通过article元素将每个元素分组可能更有意义。这时候就需要 display:contents; 出场了。我们有了两全的方案 - 通过有意义的语义化方式去组织元素，同时CSS也以合理的方式去完成布局。
+
+```html
+<div class="grid">
+  <article style="display: contents;">
+    <h2>This is a heading</h2>
+    <p>...</p>
+    <p>Footer stuff</p>
+  </article>
+  <article style="display: contents;">
+    <h2>This is a really really really super duper loooong heading</h2>
+    <p>...</p>
+    <p>Footer stuff</p>
+  </article>
+</div>
+```
+
+使用与上面相同的CSS，我们可以实现我们想要的布局。
+
+## 浏览器兼容状况
+
+在撰写本文时，display:contents; 仅在两个主流浏览器中得到支持，其他支持很快就会到来。
+
+![](./imgs/20180401/caniuse.png)
+
+>2018年03月27日浏览器兼容状况
+
+因此，此功能目前仍应被视为渐进式增强功能，并应有适当的降级处理。
+
+```html
+article {
+  display: grid;
+  grid-template-rows: 200px 1fr auto; /* e.g. Use a fixed height for the header */
+}
+
+@supports (display: contents) {
+  article { display: contents; }
+}
+```
