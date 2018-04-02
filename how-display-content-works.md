@@ -2,7 +2,7 @@
 
 > 原文出处：[How display: contents; Works](https://bitsofco.de/how-display-contents-works/)
 
-正如我经常提到的那样，[文档树中的每个元素都是一个矩形盒子](https://bitsofco.de/controlling-the-box-model/)。 一般来说，这个“矩形框”由两部分组成。 首先我们有实际的盒子，它由边框，填充和边缘区域组成。 其次，我们有盒子的内容-具体内容区域。
+正如我经常提到的那样，[文档树中的每个元素都是一个矩形盒子](https://bitsofco.de/controlling-the-box-model/)。 一般来说，这个“矩形盒子”由两部分组成。 首先我们有实际的盒子，它由边框，填充和边缘区域组成。 其次，我们有盒子的内容-具体内容区域。
 
 ![](./imgs/20180401/Group-3.png)
 
