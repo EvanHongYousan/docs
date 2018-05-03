@@ -219,14 +219,14 @@ step4 --> over
 ### 报名逻辑
 
 ```
-graph TD
+graph TD;
 
-开始 --> doClick[点击有课程的日期]
-doClick --> book{调用报名接口}
-book --> |成功| showClass[展示订到的课程]
-showClass --> over[结束]
-book --> |失败| showTip[展示失败提示]
-showTip --> over
+开始 --> doClick[点击有课程的日期];
+doClick --> book{调用报名接口};
+book --> |成功| showClass[展示订到的课程];
+showClass --> over[结束];
+book --> |失败| showTip[展示失败提示];
+showTip --> over;
 ```
 
 ## 代码分层架构
