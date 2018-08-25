@@ -2,7 +2,7 @@
 
 ## 本文背景
 
-目前绝大部分语言都内置了迭代器，而当前开发中对于迭代器的使用也很是频繁。今天这么巧地就看到了迭代器相关文档，索性对此做下归纳和总结。
+目前绝大部分语言都内置了迭代器，而当前开发中对于迭代器的使用也很是频繁。今天刚好看到迭代器相关文档，索性对此做下归纳和总结。
 
 ## 迭代器模式的含义
 
@@ -33,15 +33,15 @@ each([1, 2, 3], function(item, index){
 比如现在有个需求，要判断 2 个数组里元素的值是否完全相等， 如果不改写 each 函数本身 的代码，我们能够入手的地方似乎只剩下 each 的回调函数了，代码如下:
 
 ```javascript
-var compare = function( ary1, ary2 ){ 
+var compare = function( ary1, ary2 ){
     if ( ary1.length !== ary2.length ){
         throw new Error ( 'ary1 和 ary2 不相等' ); }
-        each( ary1, function( i, n ){ 
+        each( ary1, function( i, n ){
             if ( n !== ary2[ i ] ){
-                throw new Error ( 'ary1 和 ary2 不相等' ); 
+                throw new Error ( 'ary1 和 ary2 不相等' );
             }
         });
-        alert ( 'ary1 和 ary2 相等' ); 
+        alert ( 'ary1 和 ary2 相等' );
 };
 compare( [ 1, 2, 3 ], [ 1, 2, 4 ] ); // throw new Error ( 'ary1和ary2不相等' );
 ```
@@ -71,7 +71,9 @@ var compare = function (iterator1, iterator2) {
     while (!iterator1.isDone() && !iterator2.isDone()) {
         if (iterator1.getCurrItem() !== iterator2.getCurrItem()) {
             throw new Error('iterator1 和 iterator2 不相等');
-        } iterator1.next(); iterator2.next();
+        }
+        iterator1.next();
+        iterator2.next();
     }
     alert('iterator1 和 iterator2 相等');
 }
@@ -142,6 +144,7 @@ var getFormUpladObj = function () {
     return $(str).appendTo($('body'));
 };
 ```
+
 如果要通过迭代器获取上传对象的话，大概是这个样子：
 
 ```javascript
