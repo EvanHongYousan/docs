@@ -159,21 +159,69 @@
 
 ### 按功能页面划分
 
-1. http://hkstock.cmbchina.com/，港股交易页，开发入口：cmbhk\source\frontend\app\views\hkstock\Index\index.htm
-1. http://hkstock.cmbchina.com/us，美股交易页，开发入口：cmbhk\source\frontend\app\views\hkstock\Us\index.htm
-1. http://hkstock.cmbchina.com/record/trade, 交易历史页，开发入口：cmbhk\source\frontend\app\views\hkstock\Record\trade.htm
-1. http://hkstock.cmbchina.com/record/fund, 资金历史页，开发入口：cmbhk\source\frontend\app\views\hkstock\Record\fund.htm
-1. http://hkstock.cmbchina.com/record/claim-history, 补领查询页，开发入口：cmbhk\source\frontend\app\views\hkstock\Record\claim-history.htm
-1. http://hkstock.cmbchina.com/info，资讯首页，开发入口：cmbhk\source\frontend\app\views\hkstock\Info\index.htm
-1. http://hkstock.cmbchina.com/info/equity，认股权证页，开发入口：cmbhk\source\frontend\app\views\hkstock\Info\equity.htm
-1. http://hkstock.cmbchina.com/info/announcement，公司公告页，开发入口：cmbhk\source\frontend\app\views\hkstock\Info\announcement.htm
-1. http://hkstock.cmbchina.com/info/ipo，新股上市页，开发入口：cmbhk\source\frontend\app\views\hkstock\Info\ipo.htm
-1. http://hkstock.cmbchina.com/ipo，认购新股页，开发入口：cmbhk\source\frontend\app\views\hkstock\Ipo\index.htm
-1. http://hkstock.cmbchina.com/ipo/status，认购状况页，开发入口：cmbhk\source\frontend\app\views\hkstock\Ipo\status.htm
-1. http://hkstock.cmbchina.com/transfer/，转仓指示页，开发入口：cmbhk\source\frontend\app\views\hkstock\Transfer\index.htm
-1. http://hkstock.cmbchina.com/transfer/history，转仓查询页，开发入口：cmbhk\source\frontend\app\views\hkstock\Transfer\history.htm
-1. http://hkstock.cmbchina.com/account，港股账户页，开发入口：cmbhk\source\frontend\app\views\hkstock\Account\index.htm
-1. http://hkstock.cmbchina.com/account?market=us，美股账户页，开发入口：cmbhk\source\frontend\app\views\hkstock\Account\index.htm
+1. 港股交易页
+    - 访问地址：http://hkstock.cmbchina.com/
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Index\index.htm
+1. 美股交易页
+    - 访问地址：http://hkstock.cmbchina.com/us
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Us\index.htm
+1. 交易历史页
+    - 访问地址：http://hkstock.cmbchina.com/record/trade
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Record\trade.htm
+1. 资金历史页
+    - 访问地址：http://hkstock.cmbchina.com/record/fund
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Record\fund.htm
+1. 补领查询页
+    - 访问地址：http://hkstock.cmbchina.com/record/claim-history
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Record\claim-history.htm
+1. 资讯首页
+    - 访问地址：http://hkstock.cmbchina.com/info
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Info\index.htm
+1. 认股权证页
+    - 访问地址：http://hkstock.cmbchina.com/info/equity
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Info\equity.htm
+1. 公司公告页
+    - 访问地址：http://hkstock.cmbchina.com/info/announcement
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Info\announcement.htm
+1. 新股上市页
+    - 访问地址：http://hkstock.cmbchina.com/info/ipo
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Info\ipo.htm
+1. 认购新股页
+    - 访问地址：http://hkstock.cmbchina.com/ipo
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Ipo\index.htm
+1. 认购状况页
+    - 访问地址：http://hkstock.cmbchina.com/ipo/status
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Ipo\status.htm
+1. 转仓指示页
+    - 访问地址：http://hkstock.cmbchina.com/transfer/
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Transfer\index.htm
+1. 转仓查询页
+    - 访问地址：http://hkstock.cmbchina.com/transfer/history
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Transfer\history.htm
+1. 港股账户页
+    - 访问地址：http://hkstock.cmbchina.com/account
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Account\index.htm
+1. 美股账户页
+    - 访问地址：http://hkstock.cmbchina.com/account?market=us
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\Account\index.htm
+1. H5港美股账户信息页
+    - 访问地址：http://hkstock.cmbchina.com/h5/account
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\H5\account.htm
+1. H5港股行情交易页
+    - 访问地址：http://hkstock.cmbchina.com/h5/trade-hk
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\H5\tradeHk.htm
+1. H5美股行情交易页
+    - 访问地址：http://hkstock.cmbchina.com/h5/trade-us
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\H5\tradeUs.htm
+1. H5港美股委托记录页
+    - 访问地址：http://hkstock.cmbchina.com/h5/order-log
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\H5\orderLog.htm
+1. H5港美股交易记录页
+    - 访问地址：http://hkstock.cmbchina.com/h5/trade-log
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\H5\tradeLog.htm
+1. H5设置页
+    - 访问地址：http://hkstock.cmbchina.com/h5/setting
+    - 开发入口：cmbhk\source\frontend\app\views\hkstock\H5\setting.htm
 
 ## 前端构建
 
@@ -189,3 +237,10 @@
 1. gulp指令为开发环境打包指令，文件打包后，会继续对scripts文件夹中的源文件进行监控；源文件发生变动，会自动进行打包
 1. gulp prod 指令会产生打包、压缩好的生产坏境业务js
 1. 其余gulp指令请看 gulpfile.js 文件
+
+## 安全
+
+前后端进行通信时，会通过CSRF token进行身份校验，以防止跨站请求伪造。token部署位置：
+
+1. cmbhk\source\frontend\app\views\hkstock\Common\head.htm第13~15行
+1. cmbhk\source\frontend\app\views\hkstock\H5\ 文件夹下文件中的head标签里
