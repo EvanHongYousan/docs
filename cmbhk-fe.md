@@ -244,3 +244,5 @@
 
 1. cmbhk\source\frontend\app\views\hkstock\Common\head.htm第13~15行
 1. cmbhk\source\frontend\app\views\hkstock\H5\ 文件夹下文件中的head标签里
+
+前端业务js所有的http请求都会经过 cmbhk\source\frontend\htdocs\scripts\futu\_base\xhr.js 工具发出，使用 CSRF token 的逻辑就在里面。
