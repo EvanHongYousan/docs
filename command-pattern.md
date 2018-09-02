@@ -150,7 +150,8 @@ MoveCommand.prototype.execute = function () {
 var moveCommand;
 moveBtn.onclick = function () {
     var animate = new Animate(ball);
-    moveCommand = new MoveCommand(animate, pos.value); moveCommand.execute();
+    moveCommand = new MoveCommand(animate, pos.value); 
+    moveCommand.execute();
 };
 ```
 
