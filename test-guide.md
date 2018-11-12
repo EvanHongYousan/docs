@@ -358,7 +358,7 @@ $ mocha .\ui_tests\*.js
 
 可以看到
 
-![](http://oqt9zb1sq.bkt.clouddn.com/GIF%20-%20big.gif)
+![](./imgs/20181112/test_run.gif)
 
 以上就是一次完整的UI测试。
 具体代码可在 http://gitlab.futunn.com/evanyan/fe_tests_example/tree/master ，http://gitlab.futunn.com/webpackage/ui-h5-dialog/tree/test 中看到
