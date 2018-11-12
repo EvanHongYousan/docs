@@ -117,7 +117,7 @@ D:\work\fe_tests_example (master) (fe_tests_example@1.0.0)
 mocha init fe_unit_tests
 ```
 可以看到项目下多了个 fe_unit_tests文件夹
-![](http://oqt9zb1sq.bkt.clouddn.com/17-6-6/14223629.jpg)
+![](./imgs/20181112/index.jpg)
 
 建立fe_unit_tests/add.js文件
 ```
@@ -165,10 +165,8 @@ describe('add 方法测试', function() {
   </body>
 </html>
 ```
-然后，使用浏览器打开 fe_unit_tests/index.html，可以看到
-![](http://oqt9zb1sq.bkt.clouddn.com/17-6-6/82146500.jpg)
+
 这就是浏览器环境下的单元测试
-具体代码可在 http://gitlab.futunn.com/evanyan/fe_tests_example/tree/master 中看到
 
 ## UI测试
 我们将继续通过实例项目来了解UI测试
@@ -361,7 +359,6 @@ $ mocha .\ui_tests\*.js
 ![](./imgs/20181112/test_run.gif)
 
 以上就是一次完整的UI测试。
-具体代码可在 http://gitlab.futunn.com/evanyan/fe_tests_example/tree/master ，http://gitlab.futunn.com/webpackage/ui-h5-dialog/tree/test 中看到
 
 ## 测试覆盖率
 
@@ -478,9 +475,7 @@ Lines        : 87.5% ( 7/8 )
 ```
 
 此时项目中生成了 coverage文件夹，打开coverage/lcov-report/index.html，可以看到：
-![](http://oqt9zb1sq.bkt.clouddn.com/17-7-12/89711002.jpg)
-![](http://oqt9zb1sq.bkt.clouddn.com/17-7-12/95243716.jpg)
-![](http://oqt9zb1sq.bkt.clouddn.com/17-7-12/71873817.jpg)
+![](./imgs/20181112/71873817.jpg)
 
 可以看到，ifElseTest.js中，其中有一个if-else代码块没有被测到。
 我们改写一下 ifElseTest.test.js文件：
